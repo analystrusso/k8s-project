@@ -44,16 +44,16 @@ Organized components with namespaces (current step)
 
 Updated crawler manifests (crawler-deployment.yaml, crawler-service.yaml, crawler-configmap.yaml) to include:
 
-metadata:
-  name: ...
-  namespace: crawler
+    metadata:
+      name: ...
+      namespace: crawler
 
 Applied those manifests so the crawler resources are recreated in the crawler namespace.
 Verified crawler pods/services/configmaps in that namespace using:
 
-kubectl -n crawler get pods
-kubectl -n crawler get svc
-kubectl -n crawler get configmaps
+    kubectl -n crawler get pods
+    kubectl -n crawler get svc
+    kubectl -n crawler get configmaps
 
 Deleted the old crawler resources from the default namespace.
 Ran kubectl proxy and then the CLI tests to confirm everything is wired correctly.
