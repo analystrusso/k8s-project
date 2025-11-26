@@ -118,10 +118,14 @@ Prerequisites
 Setup
 
     Start Minikube:
+	minikube start
+	minikube dashboard --port=63840
+	minikube tunnel --bind-address="127.0.0.1" -c
 
-    minikube start
+	- I wrote a bash script to do these things in one step.
 
-Apply the manifests (exact file paths may differ):
+
+Apply the manifests:
 
 kubectl apply -f k8s/web/
 kubectl apply -f k8s/api/
